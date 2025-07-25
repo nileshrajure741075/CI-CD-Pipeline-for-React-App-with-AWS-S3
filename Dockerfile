@@ -1,12 +1,10 @@
-# Use an official Nginx image
+# Use official Nginx image
 FROM nginx:alpine
 
-COPY package*.json ./
+# Copy your static site files to Nginx's web directory
+COPY index.html /usr/share/nginx/html/
 
-# Copy your HTML file to the Nginx web directory
-COPY index.html /usr/share/nginx/html/index.html
-
-# Expose port 80
+# Optional: expose port
 EXPOSE 80
 
 # Start Nginx
